@@ -9,6 +9,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: kPrimaryLightColor,
         body: Column(
           children: <Widget>[
@@ -98,7 +99,7 @@ class Login extends StatelessWidget {
                           Container(
                             child: TextButton(
                               style: TextButton.styleFrom(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: const EdgeInsets.all(8.0),
                                   textStyle: const TextStyle(fontSize: 20),
                                   backgroundColor: buttonColor),
                               onPressed: () {},
