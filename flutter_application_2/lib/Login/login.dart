@@ -18,7 +18,10 @@ class Login extends StatelessWidget {
               child: Center(
                 child: Text(
                   'KMITL พร้อม',
-                  style: TextStyle(fontSize: 30),
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
               padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
@@ -41,7 +44,9 @@ class Login extends StatelessWidget {
                     Container(
                         child: Align(
                           alignment: Alignment.topLeft,
-                          child: Text('Login', style: TextStyle(fontSize: 20)),
+                          child: Text('Login',
+                              style: TextStyle(
+                                  fontSize: 20, color: kPrimaryLightColor)),
                         ),
                         // color: Colors.amber,
                         padding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
@@ -52,7 +57,9 @@ class Login extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('Username',
-                                    style: TextStyle(fontSize: 12)),
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: kPrimaryLightColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0)),
@@ -76,7 +83,9 @@ class Login extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('Password',
-                                    style: TextStyle(fontSize: 12)),
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: kPrimaryLightColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0)),
@@ -99,8 +108,8 @@ class Login extends StatelessWidget {
                           Container(
                             child: TextButton(
                               style: TextButton.styleFrom(
-                                  padding: const EdgeInsets.all(8.0),
-                                  textStyle: const TextStyle(fontSize: 20),
+                                  padding: const EdgeInsets.all(5.0),
+                                  textStyle: const TextStyle(fontSize: 15),
                                   backgroundColor: buttonColor),
                               onPressed: () {},
                               child: const Text(

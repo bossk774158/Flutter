@@ -33,7 +33,8 @@ class Register extends StatelessWidget {
                         child: Center(
                           child: Text(
                             'Register',
-                            style: TextStyle(fontSize: 20),
+                            style:
+                                TextStyle(fontSize: 20, color: kPrimaryColor),
                           ),
                         ),
                       ),
@@ -44,7 +45,8 @@ class Register extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('รหัสบัตรประชาชน',
-                                    style: TextStyle(fontSize: 10)),
+                                    style: TextStyle(
+                                        fontSize: 10, color: kPrimaryColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -68,7 +70,8 @@ class Register extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('ชื่อ - นามสกุล',
-                                    style: TextStyle(fontSize: 10)),
+                                    style: TextStyle(
+                                        fontSize: 10, color: kPrimaryColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -92,7 +95,8 @@ class Register extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('รหัสผ่าน',
-                                    style: TextStyle(fontSize: 10)),
+                                    style: TextStyle(
+                                        fontSize: 10, color: kPrimaryColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -116,7 +120,8 @@ class Register extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('ยืนยันรหัสผ่าน',
-                                    style: TextStyle(fontSize: 10)),
+                                    style: TextStyle(
+                                        fontSize: 10, color: kPrimaryColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -140,7 +145,8 @@ class Register extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.topLeft,
                                 child: Text('อีเมล', //แก้เพิ่ม ล์
-                                    style: TextStyle(fontSize: 10)),
+                                    style: TextStyle(
+                                        fontSize: 10, color: kPrimaryColor)),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
