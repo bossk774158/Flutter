@@ -30,19 +30,20 @@ class Register extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         child: Center(
                           child: Text(
-                            'Register',
+                            'สร้างบัญชีผู้ใช้งาน',
                             style:
                                 TextStyle(fontSize: 20, color: kPrimaryColor),
                           ),
                         ),
                       ),
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
                     ),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
                               child: Align(
                                 alignment: Alignment.topLeft,
-                                child: Text('รหัสบัตรประชาชน',
+                                child: Text('หมายเลขบัตรประชาชน',
                                     style: TextStyle(
                                         fontSize: 10, color: kPrimaryColor)),
                               ),

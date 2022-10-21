@@ -1,8 +1,11 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_application_2/Register/register.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_application_2/ChangePassword/changePassword.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,7 +36,7 @@ class Login extends StatelessWidget {
                   borderRadius: new BorderRadius.all(
                     const Radius.circular(15.0),
                   )),
-              padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 40.0),
+              padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 10.0),
               margin: EdgeInsets.fromLTRB(60.0, 50.0, 60.0, 10.0),
               child: Column(children: <Widget>[
                 Column(
@@ -41,7 +44,7 @@ class Login extends StatelessWidget {
                     Container(
                         child: Align(
                           alignment: Alignment.topLeft,
-                          child: Text('Login',
+                          child: Text('เข้าสู่ระบบ',
                               style: TextStyle(
                                   fontSize: 20, color: kPrimaryLightColor)),
                         ),
@@ -52,7 +55,7 @@ class Login extends StatelessWidget {
                           Container(
                               child: Align(
                                 alignment: Alignment.topLeft,
-                                child: Text('Username',
+                                child: Text('หมายเลขบัตรประชาชน',
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: kPrimaryLightColor)),
@@ -77,7 +80,7 @@ class Login extends StatelessWidget {
                           Container(
                               child: Align(
                                 alignment: Alignment.topLeft,
-                                child: Text('Password',
+                                child: Text('รหัสผ่าน',
                                     style: TextStyle(
                                         fontSize: 12,
                                         color: kPrimaryLightColor)),
@@ -106,18 +109,37 @@ class Login extends StatelessWidget {
                                   padding: const EdgeInsets.all(5.0),
                                   textStyle: const TextStyle(fontSize: 15),
                                   backgroundColor: buttonColor),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Register()),
-                                );
-                              },
+                              onPressed: () {},
                               child: const Text(
-                                'Login',
+                                'ล็อกอิน',
                                 style: TextStyle(color: Colors.white),
                               ),
                             ),
+                          ),
+                          Container(
+                            child: Text.rich(TextSpan(
+                                style: TextStyle(
+                                  fontSize: 27,
+                                ),
+                                children: [
+                                  TextSpan(
+                                      style: TextStyle(
+                                          color: kPrimaryColor,
+                                          decoration: TextDecoration.underline,
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.bold),
+                                      text: "สร้างบัญชี",
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const Register()),
+                                          );
+                                        }),
+                                ])),
+                            padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
                           )
                         ]),
                         padding: EdgeInsets.all(5.0),

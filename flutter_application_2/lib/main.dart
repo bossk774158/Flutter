@@ -4,6 +4,7 @@ import 'package:flutter_application_2/Login/login.dart';
 import 'package:flutter_application_2/Register/register.dart';
 import 'package:flutter_application_2/home.dart';
 import 'package:flutter_application_2/doctor/appointmen_create.dart';
+import 'package:flutter_application_2/ChangePassword/changePassword.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,6 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Login(),
-        // '/': (context) => const Register(),
         '/Home': (context) => const Home(),
       }, //route
     );
