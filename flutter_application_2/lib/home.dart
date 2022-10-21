@@ -30,11 +30,8 @@ class Home extends StatelessWidget {
             Container(
               decoration: new BoxDecoration(
                   color: Colors.white,
-                  borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(15.0),
-                    topRight: const Radius.circular(15.0),
-                    bottomLeft: const Radius.circular(15.0),
-                    bottomRight: const Radius.circular(15.0),
+                  borderRadius: new BorderRadius.all(
+                    const Radius.circular(15.0),
                   )),
               padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 40.0),
               margin: EdgeInsets.fromLTRB(60.0, 50.0, 60.0, 10.0),
@@ -111,7 +108,9 @@ class Home extends StatelessWidget {
                                   padding: const EdgeInsets.all(5.0),
                                   textStyle: const TextStyle(fontSize: 15),
                                   backgroundColor: buttonColor),
-                              onPressed: () {Navigator.pushNamed(context, '/Login');},
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/Login');
+                              },
                               child: const Text(
                                 'Home',
                                 style: TextStyle(color: Colors.white),

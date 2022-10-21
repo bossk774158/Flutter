@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_2/constants.dart';
+import 'package:flutter_application_2/Register/register.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class Login extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Container(
-              // color: Colors.white,
               child: Center(
                 child: Text(
                   'KMITL พร้อม',
@@ -30,11 +30,8 @@ class Login extends StatelessWidget {
             Container(
               decoration: new BoxDecoration(
                   color: Colors.white,
-                  borderRadius: new BorderRadius.only(
-                    topLeft: const Radius.circular(15.0),
-                    topRight: const Radius.circular(15.0),
-                    bottomLeft: const Radius.circular(15.0),
-                    bottomRight: const Radius.circular(15.0),
+                  borderRadius: new BorderRadius.all(
+                    const Radius.circular(15.0),
                   )),
               padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 40.0),
               margin: EdgeInsets.fromLTRB(60.0, 50.0, 60.0, 10.0),
@@ -48,7 +45,6 @@ class Login extends StatelessWidget {
                               style: TextStyle(
                                   fontSize: 20, color: kPrimaryLightColor)),
                         ),
-                        // color: Colors.amber,
                         padding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                         margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 15.0)),
                     Container(
@@ -74,7 +70,6 @@ class Login extends StatelessWidget {
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 10.0)),
                         ]),
-                        // color: Colors.grey,
                         padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
@@ -111,7 +106,13 @@ class Login extends StatelessWidget {
                                   padding: const EdgeInsets.all(5.0),
                                   textStyle: const TextStyle(fontSize: 15),
                                   backgroundColor: buttonColor),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Register()),
+                                );
+                              },
                               child: const Text(
                                 'Login',
                                 style: TextStyle(color: Colors.white),
@@ -119,7 +120,6 @@ class Login extends StatelessWidget {
                             ),
                           )
                         ]),
-                        // color: Colors.grey,
                         padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                   ],
