@@ -31,8 +31,10 @@ class ChangePassword extends StatelessWidget {
                         child: Center(
                           child: Text(
                             'เปลี่ยนรหัสผ่าน',
-                            style:
-                                TextStyle(fontSize: 17, color: kPrimaryColor),
+                            style: TextStyle(
+                                fontSize: 17,
+                                color: kPrimaryColor,
+                                fontFamily: 'Inter'),
                           ),
                         ),
                       ),
@@ -46,7 +48,8 @@ class ChangePassword extends StatelessWidget {
                                 child: Text('รหัสผ่าน',
                                     style: TextStyle(
                                         fontSize: 10,
-                                        color: kPrimaryLightColor)),
+                                        color: kPrimaryLightColor,
+                                        fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -71,7 +74,8 @@ class ChangePassword extends StatelessWidget {
                                 child: Text('ยืนยันรหัสผ่าน',
                                     style: TextStyle(
                                         fontSize: 10,
-                                        color: kPrimaryLightColor)),
+                                        color: kPrimaryLightColor,
+                                        fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -100,7 +104,9 @@ class ChangePassword extends StatelessWidget {
                               child: const Text(
                                 'ยืนยัน',
                                 style: TextStyle(
-                                    fontSize: 12, color: Colors.white),
+                                    fontSize: 12,
+                                    color: Colors.white,
+                                    fontFamily: 'Inter'),
                               ),
                             ),
                           )

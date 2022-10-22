@@ -28,8 +28,11 @@ class AddDoctor extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.center,
                         child: Text('เพิ่มแพทย์ในระบบ',
-                            style:
-                                TextStyle(fontSize: 17, color: kPrimaryColor)),
+                            style: TextStyle(
+                                fontSize: 17,
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Inter')),
                       ),
                       padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 20.0),
                     ),
@@ -40,7 +43,9 @@ class AddDoctor extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Text('หมายเลขบัตรประชาชน',
                                   style: TextStyle(
-                                      fontSize: 12, color: kPrimaryColor)),
+                                      fontSize: 12,
+                                      color: kPrimaryColor,
+                                      fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
@@ -62,7 +67,9 @@ class AddDoctor extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Text('ชื่อ - นามสกุล',
                                   style: TextStyle(
-                                      fontSize: 12, color: kPrimaryColor)),
+                                      fontSize: 12,
+                                      color: kPrimaryColor,
+                                      fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
@@ -85,7 +92,9 @@ class AddDoctor extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Text('เลขประจำตัวแพทย์ ',
                                   style: TextStyle(
-                                      fontSize: 12, color: kPrimaryColor)),
+                                      fontSize: 12,
+                                      color: kPrimaryColor,
+                                      fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
@@ -107,7 +116,9 @@ class AddDoctor extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Text('รหัสผ่าน',
                                   style: TextStyle(
-                                      fontSize: 12, color: kPrimaryColor)),
+                                      fontSize: 12,
+                                      color: kPrimaryColor,
+                                      fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
@@ -129,7 +140,9 @@ class AddDoctor extends StatelessWidget {
                               alignment: Alignment.topLeft,
                               child: Text('ยืนยันรหัสผ่าน',
                                   style: TextStyle(
-                                      fontSize: 12, color: kPrimaryColor)),
+                                      fontSize: 12,
+                                      color: kPrimaryColor,
+                                      fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
@@ -155,7 +168,8 @@ class AddDoctor extends StatelessWidget {
                               onPressed: () {},
                               child: const Text(
                                 'ยืนยัน',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white, fontFamily: 'Inter'),
                               ),
                             ),
                           ),

@@ -5,7 +5,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_application_2/Register/register.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_application_2/ChangePassword/changePassword.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -24,7 +23,8 @@ class Login extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 30,
                       color: kPrimaryColor,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Inter'),
                 ),
               ),
               padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
@@ -46,7 +46,9 @@ class Login extends StatelessWidget {
                           alignment: Alignment.topLeft,
                           child: Text('เข้าสู่ระบบ',
                               style: TextStyle(
-                                  fontSize: 20, color: kPrimaryLightColor)),
+                                  fontSize: 20,
+                                  color: kPrimaryLightColor,
+                                  fontFamily: 'Inter')),
                         ),
                         padding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
                         margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 15.0)),
@@ -58,7 +60,8 @@ class Login extends StatelessWidget {
                                 child: Text('หมายเลขบัตรประชาชน',
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: kPrimaryLightColor)),
+                                        color: kPrimaryLightColor,
+                                        fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0)),
@@ -83,7 +86,8 @@ class Login extends StatelessWidget {
                                 child: Text('รหัสผ่าน',
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: kPrimaryLightColor)),
+                                        color: kPrimaryLightColor,
+                                        fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0)),
@@ -112,7 +116,8 @@ class Login extends StatelessWidget {
                               onPressed: () {},
                               child: const Text(
                                 'ล็อกอิน',
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: Colors.white, fontFamily: 'Inter'),
                               ),
                             ),
                           ),
@@ -127,7 +132,8 @@ class Login extends StatelessWidget {
                                           color: kPrimaryColor,
                                           decoration: TextDecoration.underline,
                                           fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Inter'),
                                       text: "สร้างบัญชี",
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
