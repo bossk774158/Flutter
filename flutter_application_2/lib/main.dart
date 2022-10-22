@@ -5,6 +5,7 @@ import 'package:flutter_application_2/Register/register.dart';
 import 'package:flutter_application_2/home.dart';
 import 'package:flutter_application_2/doctor/appointmen_create.dart';
 import 'package:flutter_application_2/ChangePassword/changePassword.dart';
+import 'package:flutter_application_2/AddDoctor/addDoctor.dart';
 
 void main() {
   runApp(const MyApp());
