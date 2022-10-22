@@ -8,6 +8,39 @@ class AddDoctor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: AddDoctorForm(),
+    );
+  }
+}
+
+class AddDoctorForm extends StatefulWidget {
+  const AddDoctorForm({super.key});
+
+  @override
+  State<AddDoctorForm> createState() => _AddDoctorState();
+}
+
+class _AddDoctorState extends State<AddDoctorForm> {
+  final addDocUname = TextEditingController();
+  final addDocName = TextEditingController();
+  final addDocIdenNum = TextEditingController();
+  final addDocPassword = TextEditingController();
+  final addDocCpassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    addDocUname.dispose();
+    addDocName.dispose();
+    addDocIdenNum.dispose();
+    addDocPassword.dispose();
+    addDocCpassword.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
@@ -55,6 +88,7 @@ class AddDoctor extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: addDocUname,
                               ),
                               margin: EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0)),
                         ]),
@@ -79,6 +113,7 @@ class AddDoctor extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: addDocName,
                               ),
                               margin: EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0)),
                         ]),
@@ -104,6 +139,7 @@ class AddDoctor extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: addDocIdenNum,
                               ),
                               margin: EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0)),
                         ]),
@@ -128,6 +164,7 @@ class AddDoctor extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: addDocPassword,
                               ),
                               margin: EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0)),
                         ]),
@@ -152,6 +189,7 @@ class AddDoctor extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: addDocCpassword,
                               ),
                               margin: EdgeInsets.fromLTRB(0.0, 2.0, 0.0, 0.0)),
                         ]),

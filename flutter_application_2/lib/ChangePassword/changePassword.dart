@@ -9,6 +9,33 @@ class ChangePassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: ChangePasswordForm(),
+    );
+  }
+}
+
+class ChangePasswordForm extends StatefulWidget {
+  const ChangePasswordForm({super.key});
+
+  @override
+  State<ChangePasswordForm> createState() => _ChangePasswordState();
+}
+
+class _ChangePasswordState extends State<ChangePasswordForm> {
+  final changePassword = TextEditingController();
+  final changeCpassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    changePassword.dispose();
+    changeCpassword.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: kPrimaryLightColor,
@@ -60,6 +87,7 @@ class ChangePassword extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: changePassword,
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),
@@ -86,6 +114,7 @@ class ChangePassword extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(4),
                                 ),
+                                controller: changeCpassword,
                               ),
                               padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 30.0),
                               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0)),

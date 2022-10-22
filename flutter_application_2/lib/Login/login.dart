@@ -11,6 +11,33 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: LoginForm(),
+    );
+  }
+}
+
+class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
+  @override
+  State<LoginForm> createState() => _LoginState();
+}
+
+class _LoginState extends State<LoginForm> {
+  final loginUname = TextEditingController();
+  final loginPassword = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    loginUname.dispose();
+    loginPassword.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: kPrimaryLightColor,
@@ -27,7 +54,7 @@ class Login extends StatelessWidget {
                       fontFamily: 'Inter'),
                 ),
               ),
-              padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+              padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
               margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
             ),
             Container(
@@ -72,6 +99,7 @@ class Login extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(5),
                                 ),
+                                controller: loginUname,
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 10.0)),
@@ -98,11 +126,11 @@ class Login extends StatelessWidget {
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(5),
                                 ),
+                                controller: loginPassword,
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
-                              margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 50.0)),
+                              margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 30.0)),
                         ]),
-                        // color: Colors.grey,
                         padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(

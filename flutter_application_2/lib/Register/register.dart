@@ -9,6 +9,39 @@ class Register extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: RegisterForm(),
+    );
+  }
+}
+
+class RegisterForm extends StatefulWidget {
+  const RegisterForm({super.key});
+
+  @override
+  State<RegisterForm> createState() => _RegisterState();
+}
+
+class _RegisterState extends State<RegisterForm> {
+  final registerUname = TextEditingController();
+  final registerPassword = TextEditingController();
+  final registerCpassword = TextEditingController();
+  final registerName = TextEditingController();
+  final registerMail = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    registerUname.dispose();
+    registerPassword.dispose();
+    registerCpassword.dispose();
+    registerName.dispose();
+    registerMail.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: kPrimaryLightColor,
@@ -59,6 +92,7 @@ class Register extends StatelessWidget {
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(4),
                               ),
+                              controller: registerUname,
                             ),
                           ),
                         ]),
@@ -83,6 +117,7 @@ class Register extends StatelessWidget {
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(4),
                               ),
+                              controller: registerName,
                             ),
                           ),
                         ]),
@@ -107,6 +142,7 @@ class Register extends StatelessWidget {
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(4),
                               ),
+                              controller: registerPassword,
                             ),
                           ),
                         ]),
@@ -131,6 +167,7 @@ class Register extends StatelessWidget {
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(4),
                               ),
+                              controller: registerCpassword,
                             ),
                           ),
                         ]),
@@ -155,6 +192,7 @@ class Register extends StatelessWidget {
                                 isDense: true,
                                 contentPadding: EdgeInsets.all(4),
                               ),
+                              controller: registerMail,
                             ),
                           ),
                         ]),
@@ -170,6 +208,11 @@ class Register extends StatelessWidget {
                                   backgroundColor: buttonColor),
                               onPressed: () {
                                 Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Login()),
+                                );
                               },
                               child: const Text(
                                 'ยืนยันการสร้างบัญชี',
