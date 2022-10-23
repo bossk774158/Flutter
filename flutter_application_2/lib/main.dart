@@ -4,8 +4,9 @@ import 'package:flutter_application_2/Login/login.dart';
 import 'package:flutter_application_2/Register/register.dart';
 import 'package:flutter_application_2/home.dart';
 import 'package:flutter_application_2/doctor/appointmen_create.dart';
-import 'package:flutter_application_2/ChangePassword/changePassword.dart';
-import 'package:flutter_application_2/AddDoctor/addDoctor.dart';
+import 'package:flutter_application_2/DrChangePass/dr_change_pass.dart';
+import 'package:flutter_application_2/AddDr/add_doctor.dart';
+import 'package:flutter_application_2/RollSelector/roll_selector.dart';
 
 void main() {
   runApp(const MyApp());

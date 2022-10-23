@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_application_2/Register/register.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_application_2/RollSelector/roll_selector.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _LoginState extends State<LoginForm> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: kPrimaryLightColor,
+        backgroundColor: SecondaryColor,
         body: Column(
           children: <Widget>[
             Container(
@@ -49,36 +50,35 @@ class _LoginState extends State<LoginForm> {
                   'KMITL พร้อม',
                   style: TextStyle(
                       fontSize: 30,
-                      color: kPrimaryColor,
+                      color: ForthColor,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Inter'),
                 ),
               ),
               padding: EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 0.0),
-              margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+              margin: EdgeInsets.fromLTRB(0.0, 30.0, 0.0, 0.0),
             ),
             Container(
               decoration: new BoxDecoration(
-                  color: Colors.white,
+                  color: PrimaryColor,
                   borderRadius: new BorderRadius.all(
                     const Radius.circular(15.0),
                   )),
-              padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 10.0),
-              margin: EdgeInsets.fromLTRB(60.0, 50.0, 60.0, 10.0),
+              padding: EdgeInsets.fromLTRB(10.0, 40.0, 10.0, 10.0),
+              margin: EdgeInsets.fromLTRB(60.0, 40.0, 60.0, 10.0),
               child: Column(children: <Widget>[
                 Column(
                   children: <Widget>[
                     Container(
                         child: Align(
-                          alignment: Alignment.topLeft,
-                          child: Text('เข้าสู่ระบบ',
+                          alignment: Alignment.center,
+                          child: Text('เข้าสู่ระบบผู้ใช้',
                               style: TextStyle(
                                   fontSize: 20,
-                                  color: kPrimaryLightColor,
+                                  color: ForthColor,
                                   fontFamily: 'Inter')),
                         ),
-                        padding: EdgeInsets.fromLTRB(15.0, 0.0, 0.0, 0.0),
-                        margin: EdgeInsets.fromLTRB(10.0, 0.0, 0.0, 15.0)),
+                        margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -87,7 +87,7 @@ class _LoginState extends State<LoginForm> {
                                 child: Text('หมายเลขบัตรประชาชน',
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: kPrimaryLightColor,
+                                        color: ForthColor,
                                         fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
@@ -95,9 +95,17 @@ class _LoginState extends State<LoginForm> {
                           Container(
                               child: TextField(
                                 decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(5),
+                                  filled: true,
+                                  fillColor: ForthColor,
                                 ),
                                 controller: loginUname,
                               ),
@@ -114,7 +122,7 @@ class _LoginState extends State<LoginForm> {
                                 child: Text('รหัสผ่าน',
                                     style: TextStyle(
                                         fontSize: 12,
-                                        color: kPrimaryLightColor,
+                                        color: ForthColor,
                                         fontFamily: 'Inter')),
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
@@ -122,9 +130,17 @@ class _LoginState extends State<LoginForm> {
                           Container(
                               child: TextField(
                                 decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
                                   isDense: true,
                                   contentPadding: EdgeInsets.all(5),
+                                  filled: true,
+                                  fillColor: ForthColor,
                                 ),
                                 controller: loginPassword,
                               ),
@@ -140,12 +156,20 @@ class _LoginState extends State<LoginForm> {
                               style: TextButton.styleFrom(
                                   padding: const EdgeInsets.all(5.0),
                                   textStyle: const TextStyle(fontSize: 15),
-                                  backgroundColor: buttonColor),
-                              onPressed: () {},
+                                  backgroundColor: ThirdColor),
+                              onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const RollSelector()),
+                                );
+                              },
                               child: const Text(
-                                'ล็อกอิน',
+                                'เข้าสู่ระบบ',
                                 style: TextStyle(
-                                    color: Colors.white, fontFamily: 'Inter'),
+                                    color: ForthColor, fontFamily: 'Inter'),
                               ),
                             ),
                           ),
@@ -157,14 +181,14 @@ class _LoginState extends State<LoginForm> {
                                 children: [
                                   TextSpan(
                                       style: TextStyle(
-                                          color: kPrimaryColor,
+                                          color: ForthColor,
                                           decoration: TextDecoration.underline,
                                           fontSize: 13,
-                                          fontWeight: FontWeight.bold,
                                           fontFamily: 'Inter'),
                                       text: "สร้างบัญชี",
                                       recognizer: TapGestureRecognizer()
                                         ..onTap = () async {
+                                          Navigator.pop(context);
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
@@ -173,7 +197,7 @@ class _LoginState extends State<LoginForm> {
                                           );
                                         }),
                                 ])),
-                            padding: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+                            padding: EdgeInsets.fromLTRB(0.0, 7.0, 0.0, 0.0),
                           )
                         ]),
                         padding: EdgeInsets.all(5.0),

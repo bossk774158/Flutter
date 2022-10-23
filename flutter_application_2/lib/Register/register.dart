@@ -44,17 +44,17 @@ class _RegisterState extends State<RegisterForm> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: kPrimaryLightColor,
+        backgroundColor: SecondaryColor,
         body: Column(
           children: <Widget>[
             Container(
               decoration: new BoxDecoration(
-                  color: Colors.white,
+                  color: PrimaryColor,
                   borderRadius: new BorderRadius.all(
                     const Radius.circular(15.0),
                   )),
               padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 40.0),
-              margin: EdgeInsets.fromLTRB(60.0, 60.0, 60.0, 10.0),
+              margin: EdgeInsets.fromLTRB(40.0, 90.0, 40.0, 0.0),
               child: Column(children: <Widget>[
                 Column(
                   children: <Widget>[
@@ -63,15 +63,15 @@ class _RegisterState extends State<RegisterForm> {
                         alignment: Alignment.topLeft,
                         child: Center(
                           child: Text(
-                            'สร้างบัญชีผู้ใช้งาน',
+                            'สร้างบัญชีผู้ใช้',
                             style: TextStyle(
                                 fontSize: 20,
-                                color: kPrimaryColor,
+                                color: ForthColor,
                                 fontFamily: 'Inter'),
                           ),
                         ),
                       ),
-                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 15.0),
                     ),
                     Container(
                         child: Column(children: <Widget>[
@@ -80,23 +80,29 @@ class _RegisterState extends State<RegisterForm> {
                               alignment: Alignment.topLeft,
                               child: Text('หมายเลขบัตรประชาชน',
                                   style: TextStyle(
-                                      fontSize: 10,
-                                      color: kPrimaryColor,
+                                      fontSize: 12,
+                                      color: ForthColor,
                                       fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                isDense: true,
-                                contentPadding: EdgeInsets.all(4),
-                              ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.all(4),
+                                  filled: true,
+                                  fillColor: ForthColor),
                               controller: registerUname,
                             ),
                           ),
                         ]),
-                        padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
                         child: Column(children: <Widget>[
@@ -105,23 +111,29 @@ class _RegisterState extends State<RegisterForm> {
                               alignment: Alignment.topLeft,
                               child: Text('ชื่อ - นามสกุล',
                                   style: TextStyle(
-                                      fontSize: 10,
-                                      color: kPrimaryColor,
+                                      fontSize: 12,
+                                      color: ForthColor,
                                       fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                isDense: true,
-                                contentPadding: EdgeInsets.all(4),
-                              ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.all(4),
+                                  filled: true,
+                                  fillColor: ForthColor),
                               controller: registerName,
                             ),
                           ),
                         ]),
-                        padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
                         child: Column(children: <Widget>[
@@ -130,23 +142,29 @@ class _RegisterState extends State<RegisterForm> {
                               alignment: Alignment.topLeft,
                               child: Text('รหัสผ่าน',
                                   style: TextStyle(
-                                      fontSize: 10,
-                                      color: kPrimaryColor,
+                                      fontSize: 12,
+                                      color: ForthColor,
                                       fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                isDense: true,
-                                contentPadding: EdgeInsets.all(4),
-                              ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.all(4),
+                                  filled: true,
+                                  fillColor: ForthColor),
                               controller: registerPassword,
                             ),
                           ),
                         ]),
-                        padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
                         child: Column(children: <Widget>[
@@ -155,23 +173,29 @@ class _RegisterState extends State<RegisterForm> {
                               alignment: Alignment.topLeft,
                               child: Text('ยืนยันรหัสผ่าน',
                                   style: TextStyle(
-                                      fontSize: 10,
-                                      color: kPrimaryColor,
+                                      fontSize: 12,
+                                      color: ForthColor,
                                       fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                isDense: true,
-                                contentPadding: EdgeInsets.all(4),
-                              ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.all(4),
+                                  filled: true,
+                                  fillColor: ForthColor),
                               controller: registerCpassword,
                             ),
                           ),
                         ]),
-                        padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
                         child: Column(children: <Widget>[
@@ -180,23 +204,29 @@ class _RegisterState extends State<RegisterForm> {
                               alignment: Alignment.topLeft,
                               child: Text('อีเมลล์ ',
                                   style: TextStyle(
-                                      fontSize: 10,
-                                      color: kPrimaryColor,
+                                      fontSize: 12,
+                                      color: ForthColor,
                                       fontFamily: 'Inter')),
                             ),
                           ),
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                isDense: true,
-                                contentPadding: EdgeInsets.all(4),
-                              ),
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(5.0),
+                                    borderSide: BorderSide(
+                                      width: 0,
+                                      style: BorderStyle.none,
+                                    ),
+                                  ),
+                                  isDense: true,
+                                  contentPadding: EdgeInsets.all(4),
+                                  filled: true,
+                                  fillColor: ForthColor),
                               controller: registerMail,
                             ),
                           ),
                         ]),
-                        padding: EdgeInsets.all(5.0),
                         margin: EdgeInsets.all(10.0)),
                     Container(
                         child: Column(children: <Widget>[
@@ -205,7 +235,7 @@ class _RegisterState extends State<RegisterForm> {
                               style: TextButton.styleFrom(
                                   padding: const EdgeInsets.all(7.0),
                                   textStyle: const TextStyle(fontSize: 20),
-                                  backgroundColor: buttonColor),
+                                  backgroundColor: ThirdColor),
                               onPressed: () {
                                 Navigator.pop(context);
                                 Navigator.push(
@@ -215,17 +245,16 @@ class _RegisterState extends State<RegisterForm> {
                                 );
                               },
                               child: const Text(
-                                'ยืนยันการสร้างบัญชี',
+                                'สร้างบัญชี',
                                 style: TextStyle(
                                     fontSize: 12,
-                                    color: Colors.white,
+                                    color: ForthColor,
                                     fontFamily: 'Inter'),
                               ),
                             ),
                           )
                         ]),
-                        padding: EdgeInsets.all(5.0),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0)),
                   ],
                 )
               ]),
