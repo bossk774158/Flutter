@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -23,22 +24,22 @@ class RegisterForm extends StatefulWidget {
 }
 
 class _RegisterState extends State<RegisterForm> {
-  final registerUname = TextEditingController();
-  final registerPassword = TextEditingController();
-  final registerCpassword = TextEditingController();
-  final registerName = TextEditingController();
-  final registerMail = TextEditingController();
+  TextEditingController _unameTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _cpasswordTextController = TextEditingController();
+  TextEditingController _nameTextController = TextEditingController();
+  TextEditingController _mailTextController = TextEditingController();
 
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    registerUname.dispose();
-    registerPassword.dispose();
-    registerCpassword.dispose();
-    registerName.dispose();
-    registerMail.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // Clean up the controller when the widget is disposed.
+  //   _unameTextController.dispose();
+  //   _passwordTextController.dispose();
+  //   _cpasswordTextController.dispose();
+  //   _nameTextController.dispose();
+  //   _mailTextController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +100,7 @@ class _RegisterState extends State<RegisterForm> {
                                   contentPadding: EdgeInsets.all(4),
                                   filled: true,
                                   fillColor: ForthColor),
-                              controller: registerUname,
+                              controller: _unameTextController,
                             ),
                           ),
                         ]),
@@ -130,7 +131,7 @@ class _RegisterState extends State<RegisterForm> {
                                   contentPadding: EdgeInsets.all(4),
                                   filled: true,
                                   fillColor: ForthColor),
-                              controller: registerName,
+                              controller: _nameTextController,
                             ),
                           ),
                         ]),
@@ -161,7 +162,7 @@ class _RegisterState extends State<RegisterForm> {
                                   contentPadding: EdgeInsets.all(4),
                                   filled: true,
                                   fillColor: ForthColor),
-                              controller: registerPassword,
+                              controller: _passwordTextController,
                             ),
                           ),
                         ]),
@@ -192,7 +193,7 @@ class _RegisterState extends State<RegisterForm> {
                                   contentPadding: EdgeInsets.all(4),
                                   filled: true,
                                   fillColor: ForthColor),
-                              controller: registerCpassword,
+                              controller: _cpasswordTextController,
                             ),
                           ),
                         ]),
@@ -223,7 +224,7 @@ class _RegisterState extends State<RegisterForm> {
                                   contentPadding: EdgeInsets.all(4),
                                   filled: true,
                                   fillColor: ForthColor),
-                              controller: registerMail,
+                              controller: _mailTextController,
                             ),
                           ),
                         ]),
@@ -237,6 +238,15 @@ class _RegisterState extends State<RegisterForm> {
                                   textStyle: const TextStyle(fontSize: 20),
                                   backgroundColor: ThirdColor),
                               onPressed: () {
+                                FirebaseAuth.instance
+                                    .createUserWithEmailAndPassword(
+                                        email: _unameTextController.text,
+                                        password: _passwordTextController.text)
+                                    .then((value) {
+                                  print("Created New Account");
+                                }).onError((error, stackTrace) {
+                                  print("Error ${error.toString()}");
+                                });
                                 Navigator.pop(context);
                                 Navigator.push(
                                   context,

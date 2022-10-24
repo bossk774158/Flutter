@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -26,16 +27,17 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginState extends State<LoginForm> {
-  final loginUname = TextEditingController();
-  final loginPassword = TextEditingController();
+  TextEditingController _unameTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _mailTextController = TextEditingController();
 
-  @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    loginUname.dispose();
-    loginPassword.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // Clean up the controller when the widget is disposed.
+  //   _unameTextController.dispose();
+  //   _passwordTextController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +109,7 @@ class _LoginState extends State<LoginForm> {
                                   filled: true,
                                   fillColor: ForthColor,
                                 ),
-                                controller: loginUname,
+                                controller: _unameTextController,
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 10.0)),
@@ -129,6 +131,9 @@ class _LoginState extends State<LoginForm> {
                               margin: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0)),
                           Container(
                               child: TextField(
+                                obscureText: true,
+                                enableSuggestions: false,
+                                autocorrect: false,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(5.0),
@@ -142,7 +147,7 @@ class _LoginState extends State<LoginForm> {
                                   filled: true,
                                   fillColor: ForthColor,
                                 ),
-                                controller: loginPassword,
+                                controller: _passwordTextController,
                               ),
                               padding: EdgeInsets.fromLTRB(5.0, 0.0, 0.0, 0.0),
                               margin: EdgeInsets.fromLTRB(5.0, 2.0, 0.0, 30.0)),
@@ -158,13 +163,16 @@ class _LoginState extends State<LoginForm> {
                                   textStyle: const TextStyle(fontSize: 15),
                                   backgroundColor: ThirdColor),
                               onPressed: () {
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const RollSelector()),
-                                );
+                                // Navigator.pop(context);
+                                FirebaseAuth.instance
+                                    .signInWithEmailAndPassword(
+                                        email: _unameTextController.text,
+                                        password: _passwordTextController.text)
+                                    .then((value) {
+                                  print("Sign In");
+                                }).onError((error, stackTrace) {
+                                  print("Error ${error.toString()}");
+                                });
                               },
                               child: const Text(
                                 'เข้าสู่ระบบ',

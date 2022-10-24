@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "78857128370",
+    "project_id": "kmitl-app-mock",
+    "storage_bucket": "kmitl-app-mock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78857128370:android:1d0601ad5f3c166b763cab",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78857128370-74uvhcnc14675hpl45beb70bac6ohqje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_application_2",
+            "certificate_hash": "8b107816c945ff1aa9661d6b27ac768ee9ba8339"
+          }
+        },
+        {
+          "client_id": "78857128370-8e8eq5p5gqh9ni6uktemdnbqjbj00kjq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuZWPaPGLUuTdhYbgthWGHaFB4cEL1ZIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78857128370-8e8eq5p5gqh9ni6uktemdnbqjbj00kjq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
