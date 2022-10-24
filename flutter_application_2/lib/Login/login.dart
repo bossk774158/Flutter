@@ -31,13 +31,13 @@ class _LoginState extends State<LoginForm> {
   TextEditingController _passwordTextController = TextEditingController();
   TextEditingController _mailTextController = TextEditingController();
 
-  // @override
-  // void dispose() {
-  //   // Clean up the controller when the widget is disposed.
-  //   _unameTextController.dispose();
-  //   _passwordTextController.dispose();
-  //   super.dispose();
-  // }
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    _unameTextController.dispose();
+    _passwordTextController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -164,15 +164,6 @@ class _LoginState extends State<LoginForm> {
                                   backgroundColor: ThirdColor),
                               onPressed: () {
                                 // Navigator.pop(context);
-                                FirebaseAuth.instance
-                                    .signInWithEmailAndPassword(
-                                        email: _unameTextController.text,
-                                        password: _passwordTextController.text)
-                                    .then((value) {
-                                  print("Sign In");
-                                }).onError((error, stackTrace) {
-                                  print("Error ${error.toString()}");
-                                });
                               },
                               child: const Text(
                                 'เข้าสู่ระบบ',

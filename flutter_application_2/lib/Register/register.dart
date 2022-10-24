@@ -30,16 +30,37 @@ class _RegisterState extends State<RegisterForm> {
   TextEditingController _nameTextController = TextEditingController();
   TextEditingController _mailTextController = TextEditingController();
 
-  // @override
-  // void dispose() {
-  //   // Clean up the controller when the widget is disposed.
-  //   _unameTextController.dispose();
-  //   _passwordTextController.dispose();
-  //   _cpasswordTextController.dispose();
-  //   _nameTextController.dispose();
-  //   _mailTextController.dispose();
-  //   super.dispose();
-  // }
+  bool _validate = false;
+
+  @override
+  void errorText() {}
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    _unameTextController.dispose();
+    _passwordTextController.dispose();
+    _cpasswordTextController.dispose();
+    _nameTextController.dispose();
+    _mailTextController.dispose();
+    super.dispose();
+  }
+
+  String? get _errorUname {
+    final text = _unameTextController.value.text;
+
+    if (!_validate) {
+      return null;
+    }
+    if (text.isEmpty) {
+      return 'Can\'t be empty';
+    }
+    if (text.length < 4) {
+      return 'Too short';
+    }
+    // return null if the text is valid
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,22 +110,24 @@ class _RegisterState extends State<RegisterForm> {
                           Container(
                             child: TextField(
                               decoration: InputDecoration(
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(5.0),
-                                    borderSide: BorderSide(
-                                      width: 0,
-                                      style: BorderStyle.none,
-                                    ),
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(5.0),
+                                  borderSide: BorderSide(
+                                    width: 0,
+                                    style: BorderStyle.none,
                                   ),
-                                  isDense: true,
-                                  contentPadding: EdgeInsets.all(4),
-                                  filled: true,
-                                  fillColor: ForthColor),
+                                ),
+                                isDense: true,
+                                contentPadding: EdgeInsets.all(4),
+                                filled: true,
+                                fillColor: ForthColor,
+                                errorText: _errorUname,
+                              ),
                               controller: _unameTextController,
                             ),
                           ),
                         ]),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.all(5.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -135,7 +158,7 @@ class _RegisterState extends State<RegisterForm> {
                             ),
                           ),
                         ]),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.all(5.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -166,7 +189,7 @@ class _RegisterState extends State<RegisterForm> {
                             ),
                           ),
                         ]),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.all(5.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -197,7 +220,7 @@ class _RegisterState extends State<RegisterForm> {
                             ),
                           ),
                         ]),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.all(5.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -228,7 +251,7 @@ class _RegisterState extends State<RegisterForm> {
                             ),
                           ),
                         ]),
-                        margin: EdgeInsets.all(10.0)),
+                        margin: EdgeInsets.all(5.0)),
                     Container(
                         child: Column(children: <Widget>[
                           Container(
@@ -238,21 +261,17 @@ class _RegisterState extends State<RegisterForm> {
                                   textStyle: const TextStyle(fontSize: 20),
                                   backgroundColor: ThirdColor),
                               onPressed: () {
-                                FirebaseAuth.instance
-                                    .createUserWithEmailAndPassword(
-                                        email: _unameTextController.text,
-                                        password: _passwordTextController.text)
-                                    .then((value) {
-                                  print("Created New Account");
-                                }).onError((error, stackTrace) {
-                                  print("Error ${error.toString()}");
+                                setState(() {
+                                  _unameTextController.text.isEmpty
+                                      ? _validate = true
+                                      : _validate = false;
                                 });
-                                Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Login()),
-                                );
+                                // Navigator.pop(context);
+                                // Navigator.push(
+                                //   context,
+                                //   MaterialPageRoute(
+                                //       builder: (context) => const Login()),
+                                // );
                               },
                               child: const Text(
                                 'สร้างบัญชี',

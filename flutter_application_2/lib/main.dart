@@ -13,9 +13,7 @@ import 'package:flutter_application_2/RollSelector/roll_selector.dart';
 import 'package:flutter_application_2/PatientChangePass/pt_change_pass.dart';
 import 'package:flutter_application_2/PatientChangeMail/pt_change_mail.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(const MyApp());
 }
 
