@@ -9,7 +9,6 @@ import 'package:flutter_application_2/doctor/appointmen_create.dart';
 import 'package:flutter_application_2/DrChangePass/dr_change_pass.dart';
 import 'package:flutter_application_2/DrChangeMail/dr_change_mail.dart';
 import 'package:flutter_application_2/AddDr/add_doctor.dart';
-import 'package:flutter_application_2/RollSelector/roll_selector.dart';
 import 'package:flutter_application_2/PatientChangePass/pt_change_pass.dart';
 import 'package:flutter_application_2/PatientChangeMail/pt_change_mail.dart';
 

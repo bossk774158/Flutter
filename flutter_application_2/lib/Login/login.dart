@@ -6,7 +6,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_2/constants.dart';
 import 'package:flutter_application_2/Register/register.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_application_2/RollSelector/roll_selector.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
